@@ -2,11 +2,11 @@
   <div
     :class="[
       'flex flex-col items-center',
-      fullScreen ? 'w-screen h-screen justify-center' : 'w-full min-h-screen',
+      fullScreen ? 'w-screen h-screen md:justify-center' : 'w-full min-h-screen',
     ]"
   >
-    <img src="/search-logo.png" alt="search" class="w-1/4" />
-    <div class="w-1/2">
+    <img src="/search-logo.png" alt="search" class="w-1/2 md:w-1/4" />
+    <div class="w-[90%] md:w-1/2">
       <input
         type="text"
         v-model="query"
@@ -16,7 +16,7 @@
       />
     </div>
 
-    <div class="w-1/2">
+    <div class="w-[90%] md:w-1/2">
       <Card v-for="result in result" :key="result.pageid" :result="result" />
       <div v-if="isLoading" class="p-4 text-center text-white">Loading...</div>
     </div>
